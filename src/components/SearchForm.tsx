@@ -17,6 +17,7 @@ export const SearchForm = () => {
         type="text"
         onChange={onchange}
         value={value}
+        // value={'変わりません'} 固定値にした場合test失敗
       />
       <button data-testid="search-button" onClick={onClick}>
         検索
