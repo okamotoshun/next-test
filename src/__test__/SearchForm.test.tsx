@@ -21,6 +21,8 @@ describe('input form onChange event', () => {
     const inputValue = screen.getByRole('textbox') as HTMLInputElement
     // ユーザーが入力フォームに"test"と入力する動作をテスト
     userEvent.type(inputValue, 'test')
+    // await を追加して入力フォームの値が更新されるのを待機
+    await screen.findByDisplayValue('test')
     // 入力フォームの値が"test"になっているかをチェック
     expect(inputValue.value).toBe('test')
   })
