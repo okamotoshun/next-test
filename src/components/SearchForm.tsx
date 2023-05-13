@@ -10,10 +10,23 @@ export const SearchForm = () => {
   const onClick = () => {
     // 検索の処理
   }
-  return (
-    <div>
-      <input type="text" onChange={onchange} value={value} />
-      <button onClick={onClick}>検索</button>
-    </div>
-  )
+  // return (
+  //   <div>
+  //     <input type="text" onChange={onchange} value={value} />
+  //     <button onClick={onClick}>検索</button>
+  //   </div>
+  // )
+    return (
+      <div>
+        <input
+          data-testid="search-input"
+          type="text"
+          onChange={onchange}
+          value={value}
+        />
+        <button data-testid="search-button" onClick={onClick}>
+          検索
+        </button>
+      </div>
+    )
 }

@@ -7,5 +7,7 @@ describe('rendering', () => {
     render(<SearchForm />)
     expect(screen.getByRole('textbox')).toBeTruthy()
     expect(screen.getByRole('button')).toBeTruthy()
+    expect(screen.getByTestId('search-input')).toBeTruthy()
+    expect(screen.getByTestId('search-button')).toBeTruthy()
   })
 })
