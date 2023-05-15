@@ -29,7 +29,7 @@ const UserPage: NextPage = () => {
       }
       setUser(userInfo)
     } catch (e) {
-      setError('Request failed ')
+      setError('Request failed')
     }
   }
 
