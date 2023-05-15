@@ -33,4 +33,11 @@ describe('input form onChange event', () => {
     userEvent.click(screen.getByRole('button'))
     expect(onSubmit).not.toHaveBeenCalled()
   })
+  it('should trigger output function', () => {
+    render(<SearchForm onSubmit={onSubmit} />)
+    const inputValue = screen.getByRole('textbox')
+    userEvent.type(inputValue, 'test')
+    userEvent.click(screen.getByRole('button'))
+    expect(onSubmit).toBeCalled
+  })
 })
