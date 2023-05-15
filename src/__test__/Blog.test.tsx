@@ -8,4 +8,8 @@ describe('useEffect rendering', () => {
     render(<BlogPage />)
     expect(screen.getByText('ローディング中')).toBeInTheDocument()
   })
+  it('Should render fetch method after data is retrieved', async () => {
+    render(<BlogPage />)
+    expect(await screen.findByText(/記事ID/)).toBeInTheDocument()
+  })
 })
