@@ -1,14 +1,23 @@
 import React, { useState } from 'react'
 
-export const SearchForm = () => {
+type SearchFormProps = {
+  onSubmit: (value: string) => void
+}
+
+export const SearchForm = ({ onSubmit }: SearchFormProps) => {
   // 入力フォームの値を管理するステート
   const [value, setValue] = useState<string>('')
   // 入力フォームの値を変更する関数
   const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   } // 検索ボタンをクリックした際に発火する関数
+  // 入力フォームに値がある場合はonSbmitを発火し、そうでない場合はconsoleを表示
   const onClick = () => {
-    // 検索の処理
+    if (value) {
+      onSubmit(value)
+    } else {
+      console.log('入力フォームが空です')
+    }
   }
   return (
     <div>
